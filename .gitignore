@@ -1,2 +1,5 @@
 .nx/cache
 .nx/workspace-data
+.stencil
+dist/*
+node_modules

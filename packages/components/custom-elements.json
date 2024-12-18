@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "../../../packages/components/src/components/my-component/my-component.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "my-component.tsx",
+          "tagName": "my-component",
+          "description": "",
+          "attributes": [
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "The first name",
+              "required": false
+            }
+          ],
+          "members": [],
+          "events": [],
+          "slots": [],
+          "cssProperties": [],
+          "cssParts": []
+        }
+      ]
+    }
+  ]
+}

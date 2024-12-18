@@ -1,3 +1,5 @@
+import { getElement } from '@stencil/core';
+
 /**
  * Testing utility functions
  */
@@ -11,7 +13,7 @@ export const createTestElement = async (
     element[key] = value;
   });
   document.body.appendChild(element);
-  await element.componentOnReady();
+  await getElement(element).componentOnReady();
   return element;
 };
 

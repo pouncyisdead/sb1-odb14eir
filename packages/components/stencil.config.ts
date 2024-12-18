@@ -1,24 +1,15 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import { generateCustomElementsJson } from './src/utils/elements';
+
+const footerMsg =
+  'Built with ❤ by *[DSLAB](https://github.siriusxm.com/orgs/product-design/teams/dslab)*';
 
 export const config: Config = {
-  namespace: 'example-wc',
-  outputTargets: [
-    {
-      type: 'dist',
-      esmLoaderPath: '../loader',
-    },
-    {
-      type: 'dist-custom-elements',
-    },
-    {
-      type: 'docs-readme',
-    },
-    {
-      type: 'www',
-      serviceWorker: null,
-    },
-  ],
+  namespace: 'components',
+  taskQueue: 'async',
+  sourceMap: true,
+  extras: { experimentalImportInjection: true },
   plugins: [
     sass({
       injectGlobalPaths: [
@@ -34,4 +25,28 @@ export const config: Config = {
       '@utils/(.*)': '<rootDir>/src/utils/$1',
     },
   },
+  enableCache: true,
+  cacheDir: '../../.stencil/',
+  devServer: {
+    openBrowser: false,
+    port: 8001,
+  },
+  outputTargets: [
+    { type: 'dist', esmLoaderPath: '../loader' },
+    { type: 'dist-custom-elements' },
+    { type: 'docs-readme', footer: footerMsg },
+    { type: 'docs-vscode', file: 'custom-elements.json' },
+    { type: 'docs-custom', generator: generateCustomElementsJson },
+    { type: 'www', serviceWorker: null },
+    { type: 'dist-hydrate-script', dir: 'dist/hydrate' },
+    {
+      type: 'dist-custom-elements',
+      customElementsExportBehavior: 'bundle',
+      includeGlobalScripts: true,
+      minify: true,
+    },
+  ],
+  /* -------------------------------------------------------------------------- */
+  /*                          Framework output targets                          */
+  /* -------------------------------------------------------------------------- */
 };
