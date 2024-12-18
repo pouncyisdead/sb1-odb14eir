@@ -1,0 +1,32 @@
+{
+  "name": "example-wc",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@nx/devkit": "20.2.2",
+    "@nx/eslint": "20.2.2",
+    "@nx/jest": "20.2.2",
+    "@nx/playwright": "20.2.2",
+    "@nx/storybook": "20.2.2",
+    "@nx/workspace": "20.2.2",
+    "@nxext/stencil": "^20.0.6",
+    "@nxkit/style-dictionary": "^6.0.0",
+    "@stencil/core": "^4.23.0",
+    "@stencil/sass": "^3.0.12",
+    "@storybook/addon-a11y": "^8.4.7",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@types/jest": "~29.5.14",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "nx": "20.2.2",
+    "prettier": "^3.0.0",
+    "storybook": "^8.4.7",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "nx": {
+    "useInferencePlugins": true
+  }
+}

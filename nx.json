@@ -1,0 +1,30 @@
+{
+  "targetDefaults": {
+    "build": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    },
+    "build-storybook": {
+      "cache": true
+    }
+  },
+  "extends": "@nx/workspace/presets/npm.json",
+  "workspaceLayout": {
+    "appsDir": "packages/apps",
+    "libsDir": "packages/libs"
+  },
+  "generators": {
+    "@nx/workspace:library": {
+      "directory": "packages/libs"
+    }
+  },
+  "defaultBase": "main"
+}

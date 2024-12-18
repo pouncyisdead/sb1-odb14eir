@@ -1,0 +1,18 @@
+// Color functions
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Spacing functions
+@function spacing($multiplier: 1) {
+  @return $spacing-unit * $multiplier;
+}
+
+// Typography functions
+@function line-height($font-size, $line-height: $line-height-base) {
+  @return $font-size * $line-height;
+}
