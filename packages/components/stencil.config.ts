@@ -3,7 +3,7 @@ import { sass } from '@stencil/sass';
 import { generateCustomElementsJson } from './src/utils/elements';
 
 const footerMsg =
-  'Built with ❤ by *[DSLAB](https://github.siriusxm.com/orgs/product-design/teams/dslab)*';
+  'Built with ❤ by *[DSLAB](https://gh.sxm.com/orgs/product-design/teams/dslab)*';
 
 export const config: Config = {
   namespace: 'components',
@@ -11,12 +11,15 @@ export const config: Config = {
   sourceMap: true,
   extras: { experimentalImportInjection: true },
   plugins: [
-    sass({
+    sass
+      ({
+        /*
       injectGlobalPaths: [
         'src/styles/_variables.scss',
         'src/styles/_mixins.scss',
         'src/styles/_functions.scss',
       ],
+      */
     }),
   ],
   testing: {
@@ -46,7 +49,4 @@ export const config: Config = {
       minify: true,
     },
   ],
-  /* -------------------------------------------------------------------------- */
-  /*                          Framework output targets                          */
-  /* -------------------------------------------------------------------------- */
 };
