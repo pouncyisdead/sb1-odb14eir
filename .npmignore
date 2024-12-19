@@ -1,0 +1,17 @@
+# Source
+src/
+tests/
+docs/
+
+# Config files
+.editorconfig
+.eslintrc
+.prettierrc
+tsconfig.json
+jest.config.js
+
+# Dev files
+.husky/
+.github/
+coverage/
+.stencil/
