@@ -1,0 +1,11 @@
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Utils
+@use 'utils/variables';
+@use 'utils/functions';
+@use 'utils/mixins';
+
+// Components
+@use '../components/my-component/my-component';
