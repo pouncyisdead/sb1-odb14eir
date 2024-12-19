@@ -12,4 +12,4 @@
 
 ----------------------------------------------
 
-Built with ❤ by *[DSLAB](https://github.siriusxm.com/orgs/product-design/teams/dslab)*
+Built with ❤ by *[DSLAB](https://gh.sxm.com/orgs/product-design/teams/dslab)*
