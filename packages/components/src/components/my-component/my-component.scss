@@ -1,3 +1,15 @@
+@use '../../styles/utils/variables' as *;
+@use '../../styles/utils/functions' as *;
+@use '../../styles/utils/mixins' as *;
+
 :host {
-  display: block;
+  all: inherit;
+  display: contents;
+}
+
+.my-component {
+  padding: spacing(2);
+  color: $color-text;
+  background-color: $color-background;
+  border-radius: $border-radius;
 }
