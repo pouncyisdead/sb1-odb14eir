@@ -9,8 +9,10 @@
   "collection": "./dist/collection/collection-manifest.json",
   "collection:main": "./dist/collection/index.js",
   "unpkg": "./dist/components/components.js",
+  "customElements": "./custom-elements.json",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "custom-elements.json"
   ]
 }
