@@ -1,8 +1,6 @@
 import { getElement } from '@stencil/core';
 
-/**
- * Testing utility functions
- */
+/** Testing utility functions */
 
 export const createTestElement = async (
   tagName: string,
