@@ -11,9 +11,8 @@ export const config: Config = {
   sourceMap: true,
   extras: { experimentalImportInjection: true },
   plugins: [
-    sass
-      ({
-        /*
+    sass({
+      /*
       injectGlobalPaths: [
         'src/styles/_variables.scss',
         'src/styles/_mixins.scss',

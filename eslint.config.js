@@ -53,7 +53,7 @@ module.exports = [
     })
     .map((config) => ({
       ...config,
-      files: ['**/*.ts', '**/*.tsx'],
+      files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
       rules: {
         ...config.rules,
         '@typescript-eslint/ban-ts-comment': 'warn',
@@ -67,7 +67,7 @@ module.exports = [
     })
     .map((config) => ({
       ...config,
-      files: ['**/*.js', '**/*.jsx'],
+      files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
       rules: {
         ...config.rules,
       },

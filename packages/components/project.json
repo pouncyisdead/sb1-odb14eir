@@ -61,6 +61,11 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/components/**/*.{ts,tsx}"]
+      },
+      "configurations": {
+        "fix": {
+          "fix": true
+        }
       }
     }
   }

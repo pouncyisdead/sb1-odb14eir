@@ -12,7 +12,7 @@ export class MyComponent {
   @Prop() text: string;
 
   private getText(): string {
-    return (this.text);
+    return this.text;
   }
 
   render() {

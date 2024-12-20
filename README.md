@@ -5,11 +5,13 @@
 ## Development Setup
 
 1. Install NVM (Node Version Manager):
+
    ```bash
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
    ```
 
 2. Install and use the correct Node.js version:
+
    ```bash
    nvm install
    nvm use

@@ -40,3 +40,4 @@ yarn-error.log*
 
 # Nx
 .nx/
+.angular

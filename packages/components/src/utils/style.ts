@@ -5,7 +5,10 @@
 /**
  * Converts a CSS custom property to its value
  */
-export const getCSSCustomProperty = (propertyName: string, element: HTMLElement = document.documentElement): string => {
+export const getCSSCustomProperty = (
+  propertyName: string,
+  element: HTMLElement = document.documentElement,
+): string => {
   return getComputedStyle(element).getPropertyValue(propertyName).trim();
 };
 
@@ -15,7 +18,7 @@ export const getCSSCustomProperty = (propertyName: string, element: HTMLElement 
 export const setCSSCustomProperty = (
   propertyName: string,
   value: string,
-  element: HTMLElement = document.documentElement
+  element: HTMLElement = document.documentElement,
 ): void => {
   element.style.setProperty(propertyName, value);
 };

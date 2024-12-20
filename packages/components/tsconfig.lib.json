@@ -6,11 +6,6 @@
     "composite": true,
     "types": ["node", "jest"]
   },
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.stories.ts",
-    "**/*.stories.js"
-  ],
+  "exclude": ["**/*.spec.*", "**/*.stories.*", "**/utils/test.ts"],
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }

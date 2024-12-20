@@ -1,10 +1,9 @@
 import { getElement } from '@stencil/core';
 
 /** Testing utility functions */
-
 export const createTestElement = async (
   tagName: string,
-  props: Record<string, unknown> = {}
+  props: Record<string, unknown> = {},
 ): Promise<HTMLElement> => {
   const element = document.createElement(tagName);
   Object.entries(props).forEach(([key, value]) => {
@@ -20,3 +19,6 @@ export const removeTestElement = (element: HTMLElement): void => {
     document.body.removeChild(element);
   }
 };
+
+/** Check testing utility setup */
+describe('check', () => it('setup', async () => expect(1).toBeTruthy()));
