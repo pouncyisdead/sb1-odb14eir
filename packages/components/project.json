@@ -10,16 +10,6 @@
     }
   },
   "targets": {
-    "test": {
-      "executor": "@nxext/stencil:test",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "projectType": "library",
-        "tsConfig": "packages/components/tsconfig.lib.json",
-        "configPath": "packages/components/stencil.config.ts",
-        "outputPath": "dist/packages/components"
-      }
-    },
     "build": {
       "executor": "@nxext/stencil:build",
       "outputs": ["{options.outputPath}"],
@@ -46,16 +36,6 @@
         "outputPath": "dist/packages/components"
       }
     },
-    "e2e": {
-      "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "projectType": "library",
-        "tsConfig": "packages/components/tsconfig.lib.json",
-        "configPath": "packages/components/stencil.config.ts",
-        "outputPath": "dist/packages/components"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
@@ -66,6 +46,27 @@
         "fix": {
           "fix": true
         }
+      }
+    },
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/components/tsconfig.lib.json",
+        "configPath": "packages/components/stencil.config.ts",
+        "outputPath": "dist/packages/components"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "packageJson": "packages/components/package.e2e.json",
+        "tsConfig": "packages/components/tsconfig.e2e.json",
+        "configPath": "packages/components/stencil.config.ts",
+        "outputPath": "dist/packages/components"
       }
     }
   }

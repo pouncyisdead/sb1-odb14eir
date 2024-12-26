@@ -1,4 +1,40 @@
 {
+  "extends": "@nx/workspace/presets/npm.json",
+  "defaultBase": "main",
+  "workspaceLayout": {
+    "appsDir": "packages/apps",
+    "libsDir": "packages/libs"
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "serveStorybookTargetName": "storybook",
+        "buildStorybookTargetName": "build-storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/workspace:library": {
+      "directory": "packages/libs"
+    }
+  },
   "targetDefaults": {
     "build": {
       "cache": true
@@ -28,41 +64,5 @@
         }
       }
     }
-  },
-  "extends": "@nx/workspace/presets/npm.json",
-  "workspaceLayout": {
-    "appsDir": "packages/apps",
-    "libsDir": "packages/libs"
-  },
-  "generators": {
-    "@nx/workspace:library": {
-      "directory": "packages/libs"
-    }
-  },
-  "defaultBase": "main",
-  "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/storybook/plugin",
-      "options": {
-        "serveStorybookTargetName": "storybook",
-        "buildStorybookTargetName": "build-storybook",
-        "testStorybookTargetName": "test-storybook",
-        "staticStorybookTargetName": "static-storybook"
-      }
-    },
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview"
-      }
-    }
-  ]
+  }
 }

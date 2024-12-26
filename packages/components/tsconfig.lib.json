@@ -4,8 +4,13 @@
     "outDir": "../../dist/out-tsc",
     "declaration": true,
     "composite": true,
-    "types": ["node", "jest"]
+    "types": ["node"]
   },
-  "exclude": ["**/*.spec.*", "**/*.stories.*", "**/utils/test.ts"],
+  "exclude": [
+    "**/*.spec.*",
+    "**/*.e2e.*",
+    "**/*.stories.*",
+    "**/utils/test.ts"
+  ],
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }
