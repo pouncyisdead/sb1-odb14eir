@@ -7,9 +7,29 @@ import customElements from '../custom-elements.json';
 
 setCustomElementsManifest(customElements);
 
-export const tags = ['autodocs'];
+/**
+ * URL to the Figma design file.
+ * @type {string}
+ */
+const url =
+  'https://www.figma.com/file/RPtQ3VxEzuzddAR3lKIfAY/Tune-2.0-%2F-Components';
 
-export const parameters: Parameters = {
+/**
+ * Storybook documentation configuration.
+ * @type {object}
+ */
+const docs = {
+  story: {
+    inline: true,
+    height: '150px',
+  },
+};
+
+/**
+ * Storybook preview parameters.
+ * @type {Parameters}
+ */
+const parameters: Parameters = {
   a11y: {
     config: {
       rules: [
@@ -31,16 +51,21 @@ export const parameters: Parameters = {
   },
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/design/RPtQ3VxEzuzddAR3lKIfAY/Tune-2.0-%2F-Components',
+    url,
   },
-  docs: {
-    story: {
-      inline: true,
-      height: '150px',
-    },
-  },
+  docs,
 };
 
+/**
+ * Storybook tags configuration.
+ * @type {object}
+ */
+const tags = ['autodocs'];
+
+/**
+ * Storybook preview configuration export.
+ * @type {Preview}
+ */
 export default {
   tags,
   parameters,

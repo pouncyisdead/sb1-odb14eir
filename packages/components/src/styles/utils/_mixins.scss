@@ -1,33 +1,42 @@
-@use './variables' as *;
+@use 'variables' as *;
 
-// Flexbox mixins
+// Flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
 @mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(unset, center, center);
 }
-
 @mixin flex-column {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, inherit, inherit);
 }
 
-// Typography mixins
+// Focus styles
+@mixin focus-ring {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba($color-primary, 0.25);
+}
+
+// Typography
 @mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+@mixin truncate {
+  @include text-truncate;
+}
 
-// Responsive mixins
+// Responsive queries
 @mixin media-breakpoint-up($width) {
   @media screen and (min-width: $width) {
     @content;
   }
 }
-
-// Focus styles
-@mixin focus-ring {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba($color-primary, 0.25);
+@mixin media-up($breakpoint) {
+  @include media-breakpoint-up($breakpoint);
 }

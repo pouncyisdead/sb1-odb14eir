@@ -2,10 +2,10 @@
 @use 'base/reset';
 @use 'base/typography';
 
-// Utils
+// Utilities
 @use 'utils/variables';
-@use 'utils/functions';
 @use 'utils/mixins';
+@use 'utils/functions';
 
 // Components
-@use '../components/my-component/my-component';
+@use 'components';

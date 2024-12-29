@@ -1,6 +1,7 @@
+@use 'sass:math';
 @use './variables' as *;
 
-// Color functions
+// Color
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
 }
@@ -9,12 +10,21 @@
   @return mix(black, $color, $percentage);
 }
 
-// Spacing functions
+@function alpha($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// Spacing
 @function spacing($multiplier: 1) {
   @return $spacing-unit * $multiplier;
 }
 
-// Typography functions
+// Typography
 @function line-height($font-size, $line-height: $line-height-base) {
   @return $font-size * $line-height;
+}
+
+// Convert px to rem
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
 }
