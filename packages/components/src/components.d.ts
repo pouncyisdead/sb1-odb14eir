@@ -6,40 +6,64 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    /**
+     * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
+     * @documentation https://^@tuneurl@^/components/tune-example
+     * @status in-dev
+     * @since 0.0.0
+     */
+    interface TuneExample {
         /**
-          * The first name
+          * An example prop for the `tune-example` component.
          */
-        "text": string;
+        "exampleProp"?: string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    /**
+     * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
+     * @documentation https://^@tuneurl@^/components/tune-example
+     * @status in-dev
+     * @since 0.0.0
+     */
+    interface HTMLTuneExampleElement extends Components.TuneExample, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLTuneExampleElement: {
+        prototype: HTMLTuneExampleElement;
+        new (): HTMLTuneExampleElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "tune-example": HTMLTuneExampleElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    /**
+     * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
+     * @documentation https://^@tuneurl@^/components/tune-example
+     * @status in-dev
+     * @since 0.0.0
+     */
+    interface TuneExample {
         /**
-          * The first name
+          * An example prop for the `tune-example` component.
          */
-        "text"?: string;
+        "exampleProp"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "tune-example": TuneExample;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            /**
+             * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
+             * @documentation https://^@tuneurl@^/components/tune-example
+             * @status in-dev
+             * @since 0.0.0
+             */
+            "tune-example": LocalJSX.TuneExample & JSXBase.HTMLAttributes<HTMLTuneExampleElement>;
         }
     }
 }

@@ -1,7 +1,7 @@
 import type { StorybookConfig } from '@storybook/web-components-vite';
 
 const config = {
-  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
@@ -14,6 +14,7 @@ const config = {
   docs: {
     autodocs: true,
   },
+  // SEE: https://nx.dev/recipes/storybook/custom-builder-configs
 } as StorybookConfig;
 
 export default config;

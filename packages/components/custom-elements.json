@@ -3,20 +3,20 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "../../../packages/components/src/components/my-component/my-component.tsx",
+      "path": "../../../packages/components/src/components/tune-example/tune-example.tsx",
       "declarations": [
         {
           "kind": "class",
-          "name": "my-component.tsx",
-          "tagName": "my-component",
+          "name": "tune-example.tsx",
+          "tagName": "tune-example",
           "description": "",
           "attributes": [
             {
-              "name": "text",
+              "name": "example",
               "type": {
                 "text": "string"
               },
-              "description": "The first name",
+              "description": "An example prop for the `tune-example` component.",
               "required": false
             }
           ],

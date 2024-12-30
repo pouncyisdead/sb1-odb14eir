@@ -61,12 +61,13 @@
     "e2e": {
       "executor": "@nxext/stencil:e2e",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": ["^build"],
       "options": {
-        "projectType": "library",
+        "projectType": "testing",
         "packageJson": "packages/components/package.e2e.json",
         "tsConfig": "packages/components/tsconfig.e2e.json",
         "configPath": "packages/components/stencil.config.ts",
-        "outputPath": "dist/packages/components"
+        "outputPath": "../../dist/packages/components"
       }
     }
   }
