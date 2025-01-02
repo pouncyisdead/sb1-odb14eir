@@ -26,6 +26,12 @@ const docs = {
 };
 
 /**
+ * Storybook tags configuration.
+ * @type {object}
+ */
+const tags = ['autodocs'];
+
+/**
  * Storybook preview parameters.
  * @type {Parameters}
  */
@@ -55,12 +61,6 @@ const parameters: Parameters = {
   },
   docs,
 };
-
-/**
- * Storybook tags configuration.
- * @type {object}
- */
-const tags = ['autodocs'];
 
 /**
  * Storybook preview configuration export.

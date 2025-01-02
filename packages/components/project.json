@@ -50,7 +50,7 @@
     },
     "test": {
       "executor": "@nxext/stencil:test",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/components/tsconfig.lib.json",
@@ -60,14 +60,13 @@
     },
     "e2e": {
       "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "dependsOn": ["^build"],
       "options": {
         "projectType": "testing",
-        "packageJson": "packages/components/package.e2e.json",
         "tsConfig": "packages/components/tsconfig.e2e.json",
         "configPath": "packages/components/stencil.config.ts",
-        "outputPath": "../../dist/packages/components"
+        "outputPath": "{workspaceRoot}/dist/{projectRoot}"
       }
     }
   }

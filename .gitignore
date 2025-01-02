@@ -8,6 +8,7 @@ coverage
 .nyc_output
 
 # Build
+dist
 dist/*
 !dist/.gitkeep
 build
