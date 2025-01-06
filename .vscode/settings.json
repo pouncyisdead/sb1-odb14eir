@@ -4,7 +4,7 @@
     "source.fixAll": "explicit",
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": ["javascript", "typescript", "json"],
   "eslint.format.enable": true,
   "editor.formatOnSave": true
 }

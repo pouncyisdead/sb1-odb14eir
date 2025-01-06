@@ -17,7 +17,8 @@
     "paths": {
       "@example/components": ["dist/packages/components"],
       "@example/components/*": ["dist/packages/components/dist/components/*"],
-      "@example/components/loader": ["dist/packages/components/loader"]
+      "@example/components/loader": ["dist/packages/components/loader"],
+      "create": ["tools/create/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

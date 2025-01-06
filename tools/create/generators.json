@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "web-component": {
+      "factory": "./src/stencil/web-component",
+      "schema": "./src/stencil/schema.json",
+      "description": "web-component generator"
+    }
+  }
+}

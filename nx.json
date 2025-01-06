@@ -12,6 +12,12 @@
     "e2e": {
       "cache": true
     },
+    "storybook": {
+      "cache": true,
+      "options": {
+        "port": 54321
+      }
+    },
     "build-storybook": {
       "cache": true
     },
@@ -28,6 +34,11 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "extends": "@nx/workspace/presets/npm.json",
@@ -71,6 +82,18 @@
         "testStorybookTargetName": "test-storybook",
         "staticStorybookTargetName": "static-storybook"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
+      }
     }
-  ]
+  ],
+  "$schema": "./node_modules/nx/schemas/nx-schema.json"
 }

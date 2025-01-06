@@ -1,0 +1,31 @@
+
+import { expect, within } from '@storybook/test';
+import { Args, Meta, StoryObj } from '@storybook/web-components';
+import { html } from 'lit';
+import type { <%= className %> } from './<%= fileName %>';
+
+const <%= className %>Meta = {
+  title: 'Components/<%= className %>',
+  component: '<%= fileName %>',
+  argTypes: {},
+  args: {},
+  render: ({ ...args }: Args) => html`<<%= fileName %> ...=${args}></<%= fileName %>>`,
+  /* SEE: https://storybook.js.org/docs/writing-stories/play-function#working-with-the-canvas
+   * to learn more about using the canvasElement to query the DOM
+   */
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    // STEP:
+    await step('Does canvas exist', async () => {
+      await expect(canvas).not.toBeNull();
+      await expect(canvas).toBeTruthy();
+    });
+  },
+} satisfies  Meta<<%= className %>>;
+
+export default <%= className %>Meta;
+
+/* SEE: https://storybook.js.org/docs/api/csf#named-story-exports */
+export const Primary = {
+  args: {},
+} satisfies StoryObj<typeof <%= className %>Meta>;

@@ -1,0 +1,41 @@
+{
+  "name": "create",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/create/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/create",
+        "main": "tools/create/src/index.ts",
+        "tsConfig": "tools/create/tsconfig.lib.json",
+        "assets": [
+          "tools/create/*.md",
+          {
+            "input": "./tools/create/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/create/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/create",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./tools/create",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,11 +1,19 @@
 import {
+  Parameters,
   Preview,
   setCustomElementsManifest,
-  Parameters,
 } from '@storybook/web-components';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { defineCustomElements } from '../../../dist/packages/components/loader';
 import customElements from '../custom-elements.json';
 
-setCustomElementsManifest(customElements);
+(async (win) => {
+  win.setTimeout(() => {
+    win.global = win;
+    setCustomElementsManifest(customElements);
+    defineCustomElements(win);
+  }, 0);
+})(window);
 
 /**
  * URL to the Figma design file.

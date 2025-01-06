@@ -68,6 +68,11 @@
         "configPath": "packages/components/stencil.config.ts",
         "outputPath": "{workspaceRoot}/dist/{projectRoot}"
       }
+    },
+    "storybook": {
+      "options": {
+        "port": 54322
+      }
     }
   }
 }

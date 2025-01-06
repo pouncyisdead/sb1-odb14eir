@@ -3,6 +3,49 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "../../../packages/components/src/components/ds-button/ds-button/ds-button.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "ds-button.tsx",
+          "tagName": "ds-button",
+          "description": "",
+          "attributes": [
+            {
+              "name": "first",
+              "type": {
+                "text": "string"
+              },
+              "description": "The first name",
+              "required": false
+            },
+            {
+              "name": "last",
+              "type": {
+                "text": "string"
+              },
+              "description": "The last name",
+              "required": false
+            },
+            {
+              "name": "middle",
+              "type": {
+                "text": "string"
+              },
+              "description": "The middle name",
+              "required": false
+            }
+          ],
+          "members": [],
+          "events": [],
+          "slots": [],
+          "cssProperties": [],
+          "cssParts": []
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "../../../packages/components/src/components/tune-example/tune-example.tsx",
       "declarations": [
         {

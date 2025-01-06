@@ -11,6 +11,15 @@ const compat = new FlatCompat({
 });
 
 module.exports = [
+  {
+    files: ['**/*.json'],
+    // Override or add rules here
+    rules: {},
+    languageOptions: {
+      parser: require('jsonc-eslint-parser'),
+    },
+  },
+
   ...compat.extends(
     'plugin:storybook/recommended',
     'plugin:@typescript-eslint/recommended',

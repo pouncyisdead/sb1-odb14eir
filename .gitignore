@@ -43,3 +43,10 @@ yarn-error.log*
 # Nx
 .nx/
 .angular
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
+
+
+.nx/cache
+.nx/workspace-data
