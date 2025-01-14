@@ -1,7 +1,10 @@
-import type { StorybookConfig } from '@storybook/web-components-vite';
-//import type { BuilderOptions } from 'storybook/internal/types';
+/* eslint-disable @nx/enforce-module-boundaries */
+import { storybookMain } from '../../../dist/tools/config-test/';
+
+const configMain = storybookMain();
 
 const config = {
+  ...configMain,
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-essentials',
@@ -34,6 +37,7 @@ const config = {
       },
     });
   },
-} satisfies StorybookConfig;
+  staticDirs: [],
+};
 
 export default config;

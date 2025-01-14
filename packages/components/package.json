@@ -15,6 +15,7 @@
     "loader/",
     "custom-elements.json"
   ],
+  "devDependencies": {},
   "nx": {
     "generators": {}
   }

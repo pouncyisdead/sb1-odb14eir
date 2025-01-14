@@ -1,11 +1,12 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 import {
   Parameters,
   Preview,
   setCustomElementsManifest,
 } from '@storybook/web-components';
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { defineCustomElements } from '../../../dist/packages/components/loader';
 import customElements from '../custom-elements.json';
+// import { configStorybook } from '../../../dist/tools/config-test/';
 
 (async (win) => {
   win.setTimeout(() => {
@@ -19,7 +20,7 @@ import customElements from '../custom-elements.json';
  * URL to the Figma design file.
  * @type {string}
  */
-const url =
+const figmaUrl =
   'https://www.figma.com/file/RPtQ3VxEzuzddAR3lKIfAY/Tune-2.0-%2F-Components';
 
 /**
@@ -65,7 +66,7 @@ const parameters: Parameters = {
   },
   design: {
     type: 'figma',
-    url,
+    url: figmaUrl,
   },
   docs,
 };

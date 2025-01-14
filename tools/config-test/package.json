@@ -1,0 +1,17 @@
+{
+  "name": "config-test",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nx/rollup": "20.3.0",
+    "storybook": "^8.4.7"
+  },
+  "module": "./index.js",
+  "main": "./index.cjs",
+  "exports": {
+    ".": {
+      "import": "./index.esm.js",
+      "require": "./index.cjs.js"
+    }
+  },
+  "private": true
+}

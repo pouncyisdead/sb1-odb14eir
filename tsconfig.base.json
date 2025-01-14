@@ -18,6 +18,10 @@
       "@example/components": ["dist/packages/components"],
       "@example/components/*": ["dist/packages/components/dist/components/*"],
       "@example/components/loader": ["dist/packages/components/loader"],
+      "@example/config-storybook": ["tools/config-storybook/"],
+      "@example/config-storybook/*": ["tools/config-storybook/*"],
+      "@example/create": ["tools/create/src/index.ts"],
+      "config-test": ["dist/packages/config-test"],
       "create": ["tools/create/src/index.ts"]
     }
   },
