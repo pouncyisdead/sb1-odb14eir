@@ -14,19 +14,22 @@ describe('ds-button', () => {
 
     await page.setContent('<ds-button></ds-button>');
     const component = await page.find('ds-button');
-    const element = await page.find('ds-button >>> div');
+    let element = await page.find('ds-button >>> button');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');
     await page.waitForChanges();
+    element = await component.find('>>> button');
     expect(element.textContent).toEqual(`Hello, World! I'm James`);
 
     component.setProperty('last', 'Quincy');
     await page.waitForChanges();
+    element = await component.find('>>> button');
     expect(element.textContent).toEqual(`Hello, World! I'm James Quincy`);
 
     component.setProperty('middle', 'Earl');
     await page.waitForChanges();
+    element = await component.find('>>> button');
     expect(element.textContent).toEqual(`Hello, World! I'm James Earl Quincy`);
   });
 });

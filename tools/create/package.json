@@ -1,17 +1,18 @@
 {
   "name": "create",
   "version": "0.0.0-development",
-  "devDependencies": {
-    "tslib": "^2.6.2"
-  },
   "type": "commonjs",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
+  "generators": "./generators.json",
   "private": true,
-  "dependencies": {
-    "@nx/devkit": "20.3.0",
-    "tslib": "^2.6.2",
-    "@nxext/stencil": "20.0.6"
+  "scripts": {
+    "component": "npx nx generate create:component"
   },
-  "generators": "./generators.json"
+  "dependencies": {
+    "@nx/devkit": "^20.3.0",
+    "@nxext/stencil": "20.0.6",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {}
 }

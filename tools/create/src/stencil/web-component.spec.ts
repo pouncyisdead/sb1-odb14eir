@@ -8,7 +8,7 @@ describe('web-component generator', () => {
   let tree: Tree;
   const options: WebComponentGeneratorSchema = {
     name: 'test-component',
-    project: '',
+    project: 'create',
   };
 
   beforeEach(() => {

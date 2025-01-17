@@ -46,6 +46,34 @@
     },
     {
       "kind": "javascript-module",
+      "path": "../../../packages/components/src/components/ds-example/ds-example.tsx",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "ds-example.tsx",
+          "tagName": "ds-example",
+          "description": "<!-- markdownlint-disable MD041 MD012 -->",
+          "attributes": [
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "A text prop for the `ds-example` component.",
+              "default": "''",
+              "required": false
+            }
+          ],
+          "members": [],
+          "events": [],
+          "slots": [],
+          "cssProperties": [],
+          "cssParts": []
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "../../../packages/components/src/components/tune-example/tune-example.tsx",
       "declarations": [
         {

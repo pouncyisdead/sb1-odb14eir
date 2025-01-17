@@ -19,12 +19,12 @@ if (swcJestConfig.swcrc === undefined) {
 // swcJestConfig.module.noInterop = false;
 
 export default {
-  displayName: 'config-test',
+  displayName: 'config-stories',
   preset: '../../jest.preset.js',
   transform: {
     '^.+\\.[tj]s$': ['@swc/jest', swcJestConfig],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   testEnvironment: 'jsdom',
-  coverageDirectory: '../../coverage/tools/config-test',
+  coverageDirectory: '../../coverage/tools/config-stories',
 };

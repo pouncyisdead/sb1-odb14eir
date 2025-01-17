@@ -1,27 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prefer-rest-params */
-/* eslint-disable no-var */
-
-// tools/config-test/src/lib/config-test.ts
-// SEE: `https://storybook.js.org/docs/api/main-config/main-config`.
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars, prefer-rest-params, no-var */
 
 import { Parameters, ProjectAnnotations } from 'storybook/internal/types';
 
 /**
- * Interface representing the documentation configuration.
+ * @fileoverview Storybook configuration utilities for managing main and preview settings.
+ * @module config-stories
+ * @requires storybook/internal/types
+ * @see {@link https://storybook.js.org/docs/api/main-config/main-config}
+ */
+
+/**
+ * Documentation configuration interface for Storybook.
+ * @interface SbMainDocs
+ * @property {string} autodocs - Controls automatic documentation generation ('tag' | 'always' | 'never')
+ * @property {string} defaultName - Default name for documentation pages
  */
 interface SbMainDocs {
-  /**
-   * Autodocs configuration.
-   * @type {string}
-   */
   autodocs: string;
-
-  /**
-   * Default name for the documentation.
-   * @type {string}
-   */
   defaultName: string;
 }
 
@@ -35,86 +30,57 @@ type SbMainFeatures = any & {
 };
 
 /**
- * Interface representing the core configuration.
+ * Core configuration interface for Storybook features.
+ * @interface SbMainCore
+ * @property {boolean} disableTelemetry - Whether to disable Storybook's telemetry
  */
 interface SbMainCore {
-  /**
-   * Indicates if telemetry should be disabled.
-   * @type {boolean}
-   */
   disableTelemetry: boolean;
 }
 
 /**
- * Interface representing the main configuration,
- * is used to configure various aspects of Storybook.
+ * Main configuration interface for Storybook.
+ * @interface SbMainConfig
+ * @property {string[]} stories - Array of story file patterns to include
+ * @property {string[]} addons - List of Storybook addons to enable
+ * @property {SbMainDocs} docs - Documentation configuration
+ * @property {SbMainFeatures} [features] - Optional feature flags
+ * @property {SbMainCore} core - Core Storybook configuration
+ * @property {Function} managerHead - Function to modify manager head HTML
+ * @property {Function} previewHead - Function to modify preview head HTML
+ * @property {string[]} staticDirs - Directories to serve static files from
  */
 interface SbMainConfig {
-  /**
-   * An array of paths or glob patterns to locate story files.
-   * @type {string[]}
-   */
   stories: string[];
-
-  /**
-   * An array of Storybook addons to enhance functionality.
-   * @type {string[]}
-   */
   addons: string[];
-
-  /**
-   * Documentation configuration.
-   * @type {SbMainDocs}
-   */
   docs: SbMainDocs;
-
-  /**
-   * Features configuration.
-   * @type {SbMainFeatures | any}
-   */
-  features?: SbMainFeatures | any;
-
-  /**
-   * Core configuration.
-   * @type {SbMainCore}
-   */
+  features?: SbMainFeatures;
   core: SbMainCore;
-
-  /**
-   * Function to modify the manager head.
-   * @param {string} [mhead] - Optional manager head string.
-   * @returns {string} Modified manager head.
-   */
   managerHead: (mhead?: string) => string;
-
-  /**
-   * Function to modify the preview head.
-   * @param {string} [phead] - Optional preview head string.
-   * @returns {string} Modified preview head.
-   */
   previewHead: (phead?: string) => string;
-
-  /**
-   * List of static directories.
-   * @type {string[]}
-   */
   staticDirs: string[];
 }
 
 /** Test function to return a string. */
-export function configTest(): string {
-  var _retVal = 'config-test',
+export function configStories(): string {
+  var _retVal = 'config-stories',
     _args = arguments;
   return _retVal;
 }
 
-/** Glob pattern of paths to return stories from */
+/**
+ * Story file & MDX patterns to include in Storybook.
+ * @constant {string[]}
+ */
 export const sbMainStories = [
   '../src/**/*.mdx',
   '../src/**/*.stories.@(js|jsx|ts|tsx)',
 ];
 
-/** An array of Storybook addons to enhance functionality. */
+/**
+ * List of Storybook addons to enable.
+ * @constant {string[]}
+ */
 export const sbMainAddons = [
   '@storybook/addon-essentials',
   '@storybook/addon-designs',
@@ -146,11 +112,12 @@ export const sbMainCore = {
 };
 
 /**
- * Function to modify the Storybook configuration based on the environment.
- *
- * @param {any} _config - The Storybook configuration object.
- * @param {any} configType - The environment configuration type.
- * @returns {any} The modified Storybook configuration object.
+ * Configures Storybook based on the environment.
+ * @function sbConfigMode
+ * @param {any} _config - The base Storybook configuration
+ * @param {Object} params - Configuration parameters
+ * @param {string} params.configType - Environment type ('DEVELOPMENT' | 'PRODUCTION')
+ * @returns {any} Modified configuration object
  */
 export function sbConfigMode(_config: any, { configType }: any) {
   if (configType === 'DEVELOPMENT') {
@@ -180,10 +147,15 @@ export const sbMainConfig = {
 };
 
 /**
- * Function to modify & return the storybook main configuration.
- *
- * @param {...Partial<SbMainConfig>[]} rest
- * @returns {SbMainConfig}
+ * Generates the main Storybook configuration by merging defaults with overrides.
+ * @function storybookMain
+ * @param {...Partial<SbMainConfig>} rest - Configuration overrides
+ * @returns {SbMainConfig} Complete Storybook configuration
+ * @example
+ * const config = storybookMain({
+ *   stories: ['./src/**\/*.stories.tsx'],
+ *   addons: ['@storybook/addon-essentials']
+ * });
  */
 export const storybookMain = (
   ...rest: Partial<SbMainConfig>[]
@@ -193,8 +165,9 @@ export const storybookMain = (
 });
 
 /**
- * URL to the Figma (figspec) design file.
- * @type {string}
+ * URL to the Figma design (figspec) file.
+ * @constant {string}
+ * @see {@link https://www.figma.com/file/RPtQ3VxEzuzddAR3lKIfAY/Tune-2.0-%2F-Components}
  */
 export const figmaUrl =
   'https://www.figma.com/file/RPtQ3VxEzuzddAR3lKIfAY/Tune-2.0-%2F-Components';
@@ -219,6 +192,15 @@ export const sbPreviewTags: string[] = ['autodocs'];
 /**
  * Storybook preview parameters.
  * @type {Parameters}
+ */
+/**
+ * Preview parameters for Storybook configuration.
+ * @constant {Parameters}
+ * @property {object} a11y - Accessibility testing configuration
+ * @property {object} actions - Action handling configuration
+ * @property {object} controls - Controls panel configuration
+ * @property {object} design - Figma design integration settings
+ * @property {object} docs - Documentation display settings
  */
 export const sbPreviewParameters: Parameters = {
   a11y: {
@@ -247,7 +229,18 @@ export const sbPreviewParameters: Parameters = {
   docs: sbPreviewDocs,
 };
 
-/** Runs a callback function, like `setCustomElementsManifest`, in the preview frame. */
+/**
+ * Initializes the Storybook preview environment.
+ * @async
+ * @function sbPreviewIife
+ * @param {Window | typeof globalThis} win - Window object to initialize
+ * @param {Function} [callbackFn] - Optional callback to execute after initialization
+ * @returns {Promise<void>}
+ * @example
+ * await sbPreviewIife(window, () => {
+ *   setCustomElementsManifest(manifest);
+ * });
+ */
 export async function sbPreviewIife(
   win: Window | typeof globalThis,
   callbackFn?: () => unknown,
@@ -270,7 +263,17 @@ export const sbPreviewConfig: ProjectAnnotations<any> = {
   parameters: sbPreviewParameters,
 };
 
-export const storybookPreview = (...rest: any[]) => ({
-  ...sbPreviewConfig,
-  ...rest.reduce((acc, curr) => ({ ...acc, ...curr }), {}),
-});
+/**
+ * Creates a preview configuration by merging default settings with custom overrides.
+ * @function storybookPreview
+ * @param {...any[]} rest - Custom preview configuration overrides
+ * @returns {ProjectAnnotations<any>} Merged preview configuration
+ * @example
+ * const previewConfig = storybookPreview({parameters:{backgrounds:{default:'light'}}});
+ */
+export function storybookPreview(...rest: any[]) {
+  return {
+    ...sbPreviewConfig,
+    ...rest.reduce((acc, curr) => ({ ...acc, ...curr }), {}),
+  };
+}

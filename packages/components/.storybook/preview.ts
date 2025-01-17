@@ -6,7 +6,7 @@ import {
 } from '@storybook/web-components';
 import { defineCustomElements } from '../../../dist/packages/components/loader';
 import customElements from '../custom-elements.json';
-// import { configStorybook } from '../../../dist/tools/config-test/';
+// import { configStorybook } from '../../../dist/tools/config-stories/';
 
 (async (win) => {
   win.setTimeout(() => {

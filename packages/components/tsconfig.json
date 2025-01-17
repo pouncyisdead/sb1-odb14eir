@@ -15,8 +15,8 @@
     "jsxFactory": "h",
     "paths": {
       "@utils/*": ["src/utils/*"],
-      "config-test": ["../../dist/packages/config-test"],
-      "config-test/*": ["../../dist/packages/config-test/*"]
+      "config-stories": ["../../dist/packages/config-stories"],
+      "config-stories/*": ["../../dist/packages/config-stories/*"]
     }
   },
   "references": [

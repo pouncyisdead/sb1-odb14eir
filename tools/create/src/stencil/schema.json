@@ -3,6 +3,7 @@
   "$id": "WebComponent",
   "title": "Stencil Component Generator",
   "type": "object",
+  "required": ["name", "project"],
   "properties": {
     "name": {
       "type": "string",
@@ -11,18 +12,31 @@
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "What name would you like to use for the component?"
+      "x-prompt": "What name would you like to use for the component?",
+      "x-priority": "important",
+      "alias": "n"
     },
     "project": {
       "type": "string",
-      "description": "Project to add the component to",
+      "description": "Project where the component is generated",
+      "default": "components",
+      "x-prompt": "What project would you like to use?",
+      "x-priority": "important",
       "alias": "p"
     },
     "directory": {
       "type": "string",
       "description": "Directory where the component should be created",
       "alias": "d"
+    },
+    "style": {
+      "type": "string",
+      "description": "The file extension to be used for style files",
+      "default": "scss",
+      "enum": ["scss", "sass", "less", "styl", "css"],
+      "x-prompt": "What stylesheet format would you like to use?",
+      "x-prompt-type": "select",
+      "alias": "s"
     }
-  },
-  "required": ["name"]
+  }
 }

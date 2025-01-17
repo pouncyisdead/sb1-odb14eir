@@ -1,4 +1,9 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+  h,
+  Host, Prop
+} from '@stencil/core';
 
 @Component({
   tag: 'ds-button',
@@ -32,8 +37,10 @@ export class DsButton {
   render() {
     return (
       <Host>
-        <div>Hello, World! I'm {this.getText()}</div>
-        <slot></slot>
+        <button role="button">
+          <span>Hello, World! I'm {this.getText()}</span>
+          <slot></slot>
+        </button>
       </Host>
     );
   }

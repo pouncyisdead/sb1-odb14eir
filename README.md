@@ -18,6 +18,7 @@
    ```
 
 3. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -36,13 +37,13 @@
 
 ## Project Structure
 
-```
-packages/
-  components/          # Web components library
-    src/
-      components/     # Individual components
-      styles/        # Shared styles and themes
-      utils/         # Utility functions
+```text
+📁 packages/
+└─📁 components/        # Web components library
+  └─📁 src/
+    ├─📁 components/    # Individual components
+    ├─📁 styles/        # Shared styles and themes
+    └─📁 utils/         # Utility functions
 ```
 
 ## Contributing

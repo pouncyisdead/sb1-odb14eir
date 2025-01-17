@@ -1,5 +1,8 @@
 /* eslint-disable @nx/enforce-module-boundaries */
-import { storybookMain } from '../../../dist/tools/config-test/';
+import {
+  storybookMain,
+  sbConfigMode,
+} from '../../../dist/tools/config-stories/';
 
 const configMain = storybookMain();
 
@@ -22,15 +25,8 @@ const config = {
   async viteFinal(config, { configType }) {
     // Merge custom configuration into the default config
     const { mergeConfig } = await import('vite');
-
-    if (configType === 'DEVELOPMENT') {
-      // Your development configuration goes here
-    }
-    if (configType === 'PRODUCTION') {
-      // Your production configuration goes here.
-    }
-
-    return mergeConfig(config, {
+    const _config = sbConfigMode(config, { configType });
+    return mergeConfig(_config, {
       // Add dependencies to pre-optimization
       optimizeDeps: {
         include: ['@storybook/web-components'],

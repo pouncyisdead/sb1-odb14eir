@@ -21,6 +21,18 @@ export namespace Components {
         "middle": string;
     }
     /**
+     * @summary This is the ds-example component for Tune DS.
+     * @documentation https://^@tuneurl@^/components/ds-example
+     * @status in-dev
+     * @since 0.0.0
+     */
+    interface DsExample {
+        /**
+          * A text prop for the `ds-example` component.
+         */
+        "text"?: string;
+    }
+    /**
      * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
      * @documentation https://^@tuneurl@^/components/tune-example
      * @status in-dev
@@ -41,6 +53,18 @@ declare global {
         new (): HTMLDsButtonElement;
     };
     /**
+     * @summary This is the ds-example component for Tune DS.
+     * @documentation https://^@tuneurl@^/components/ds-example
+     * @status in-dev
+     * @since 0.0.0
+     */
+    interface HTMLDsExampleElement extends Components.DsExample, HTMLStencilElement {
+    }
+    var HTMLDsExampleElement: {
+        prototype: HTMLDsExampleElement;
+        new (): HTMLDsExampleElement;
+    };
+    /**
      * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
      * @documentation https://^@tuneurl@^/components/tune-example
      * @status in-dev
@@ -54,6 +78,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
+        "ds-example": HTMLDsExampleElement;
         "tune-example": HTMLTuneExampleElement;
     }
 }
@@ -73,6 +98,18 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     /**
+     * @summary This is the ds-example component for Tune DS.
+     * @documentation https://^@tuneurl@^/components/ds-example
+     * @status in-dev
+     * @since 0.0.0
+     */
+    interface DsExample {
+        /**
+          * A text prop for the `ds-example` component.
+         */
+        "text"?: string;
+    }
+    /**
      * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
      * @documentation https://^@tuneurl@^/components/tune-example
      * @status in-dev
@@ -86,6 +123,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ds-button": DsButton;
+        "ds-example": DsExample;
         "tune-example": TuneExample;
     }
 }
@@ -94,6 +132,13 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            /**
+             * @summary This is the ds-example component for Tune DS.
+             * @documentation https://^@tuneurl@^/components/ds-example
+             * @status in-dev
+             * @since 0.0.0
+             */
+            "ds-example": LocalJSX.DsExample & JSXBase.HTMLAttributes<HTMLDsExampleElement>;
             /**
              * @summary This is an example component for Tune DS. It is not intended to be included in our projects.
              * @documentation https://^@tuneurl@^/components/tune-example

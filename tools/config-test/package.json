@@ -1,12 +1,12 @@
 {
-  "name": "config-test",
+  "name": "config-stories",
   "version": "0.0.1",
   "dependencies": {
     "@nx/rollup": "20.3.0",
     "storybook": "^8.4.7"
   },
-  "module": "./index.js",
-  "main": "./index.cjs",
+  "module": "./index.esm.js",
+  "main": "./index.cjs.js",
   "exports": {
     ".": {
       "import": "./index.esm.js",

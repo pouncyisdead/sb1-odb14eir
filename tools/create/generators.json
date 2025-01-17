@@ -1,9 +1,9 @@
 {
   "generators": {
-    "web-component": {
+    "component": {
       "factory": "./src/stencil/web-component",
       "schema": "./src/stencil/schema.json",
-      "description": "web-component generator"
+      "description": "Add a new StencilJS web-component to a library"
     }
   }
 }

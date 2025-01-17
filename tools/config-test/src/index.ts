@@ -1,1 +1,1 @@
-export * from './lib/config-test';
+export * from './lib/config-stories';
