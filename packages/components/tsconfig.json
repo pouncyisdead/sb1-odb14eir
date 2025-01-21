@@ -13,6 +13,8 @@
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "paths": {
       "@utils/*": ["src/utils/*"],
       "config-stories": ["../../dist/packages/config-stories"],

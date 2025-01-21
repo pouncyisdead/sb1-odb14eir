@@ -1,17 +1,18 @@
 import { E2EElement, newE2EPage, E2EPage } from '@stencil/core/testing';
 
-describe('DsExample E2E', () => {
+// DsButton E2E Tests.
+describe('DsButton E2E', () => {
   let page: E2EPage;
   let component: E2EElement;
   const initialText = 'Hello World!';
   const updatedText = 'OK, World?';
   const addedText = 'Hey, you ';
-  const initialContent = `<ds-example text="${initialText}"></ds-example>`;
+  const initialContent = `<ds-button text="${initialText}"></ds-button>`;
 
   beforeEach(async () => {
     page = await newE2EPage();
     await page.setContent(initialContent);
-    component = await page.find('ds-example');
+    component = await page.find('ds-button');
   });
 
   it('renders', async () => {
@@ -23,8 +24,8 @@ describe('DsExample E2E', () => {
     expect(element.textContent).toEqual('Hello World!');
   });
 
-  it('renders changes to the `textProp` property', async () => {
-    component.setProperty('textProp', updatedText);
+  it('renders changes to the `text` property', async () => {
+    component.setProperty('text', updatedText);
     await page.waitForChanges();
     const element = await component.find('>>> .text');
     expect(element.textContent).toEqual(updatedText);

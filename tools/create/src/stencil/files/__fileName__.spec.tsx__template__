@@ -2,6 +2,7 @@
 import { newSpecPage, SpecPage } from '@stencil/core/testing';
 import { <%= className %> } from '../<%= fileName %>';
 
+// <%= className %> Unit Tests.
 describe('<%= className %>', () => {
   let page: SpecPage;
   const initialText = 'Hello World!';

@@ -5,6 +5,7 @@ import { within as shadowWithin } from 'shadow-dom-testing-library';
 
 import type { <%= className %> } from './<%= fileName %>';
 
+// <%= className %> Component Stories.
 const <%= className %>Meta = {
   title: 'Components/<%= className %>',
   component: '<%= fileName %>',

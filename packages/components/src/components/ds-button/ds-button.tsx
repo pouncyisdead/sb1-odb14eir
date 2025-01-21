@@ -9,20 +9,20 @@ import {
 } from '@stencil/core';
 
 /**
- * @summary This is the ds-example component for Tune DS.
- * @documentation https://^@tuneurl@^/components/ds-example
+ * @summary This is the ds-button component for Tune DS.
+ * @documentation https://^@tuneurl@^/components/ds-button
  * @status in-dev
  * @since 0.0.0
  */
 @Component({
-  tag: 'ds-example',
-  styleUrl: 'ds-example.scss',
+  tag: 'ds-button',
+  styleUrl: 'ds-button.scss',
   shadow: {
     delegatesFocus: true,
   },
   formAssociated: true,
 })
-export class DsExample {
+export class DsButton {
   /** `Element` host reference handle. */
   @Element() el!: HTMLElement;
 
@@ -32,14 +32,14 @@ export class DsExample {
    */
   @AttachInternals() internals: ElementInternals;
 
-  /** A text prop for the `ds-example` component. */
-  @Prop() text?: string = '';
+  /** A text prop for the `ds-button` component. */
+  @Prop() text?: string;
 
   render() {
     return (
-      <Host>
-        <button role="button" class="text">
-          <span>{this.text}</span>
+      <Host class={{ 'ds-button': true }}>
+        <button role="button" class={{ btn: true, text: true }}>
+          <span part="text-span">{this.text}</span>
           <slot></slot>
         </button>
       </Host>

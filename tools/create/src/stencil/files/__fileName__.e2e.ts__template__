@@ -1,5 +1,6 @@
 import { E2EElement, newE2EPage, E2EPage } from '@stencil/core/testing';
 
+// <%= className %> E2E Tests.
 describe('<%= className %> E2E', () => {
   let page: E2EPage;
   let component: E2EElement;

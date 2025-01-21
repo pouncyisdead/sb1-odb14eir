@@ -38,9 +38,9 @@ export class <%= className %> {
 
   render() {
     return (
-      <Host>
-        <button role="button" class="text">
-          <span>{this.text}</span>
+      <Host class={{ '<%= fileName %>': true }}>
+        <button role="button" class={{ btn: true, text: true }}>
+          <span part="text-span">{this.text}</span>
           <slot></slot>
         </button>
       </Host>

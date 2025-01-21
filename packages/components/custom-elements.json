@@ -3,55 +3,12 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "../../../packages/components/src/components/ds-button/ds-button/ds-button.tsx",
+      "path": "../../../packages/components/src/components/ds-button/ds-button.tsx",
       "declarations": [
         {
           "kind": "class",
           "name": "ds-button.tsx",
           "tagName": "ds-button",
-          "description": "",
-          "attributes": [
-            {
-              "name": "first",
-              "type": {
-                "text": "string"
-              },
-              "description": "The first name",
-              "required": false
-            },
-            {
-              "name": "last",
-              "type": {
-                "text": "string"
-              },
-              "description": "The last name",
-              "required": false
-            },
-            {
-              "name": "middle",
-              "type": {
-                "text": "string"
-              },
-              "description": "The middle name",
-              "required": false
-            }
-          ],
-          "members": [],
-          "events": [],
-          "slots": [],
-          "cssProperties": [],
-          "cssParts": []
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "../../../packages/components/src/components/ds-example/ds-example.tsx",
-      "declarations": [
-        {
-          "kind": "class",
-          "name": "ds-example.tsx",
-          "tagName": "ds-example",
           "description": "<!-- markdownlint-disable MD041 MD012 -->",
           "attributes": [
             {
@@ -59,8 +16,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A text prop for the `ds-example` component.",
-              "default": "''",
+              "description": "A text prop for the `ds-button` component.",
               "required": false
             }
           ],
@@ -68,34 +24,12 @@
           "events": [],
           "slots": [],
           "cssProperties": [],
-          "cssParts": []
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "../../../packages/components/src/components/tune-example/tune-example.tsx",
-      "declarations": [
-        {
-          "kind": "class",
-          "name": "tune-example.tsx",
-          "tagName": "tune-example",
-          "description": "",
-          "attributes": [
+          "cssParts": [
             {
-              "name": "example",
-              "type": {
-                "text": "string"
-              },
-              "description": "An example prop for the `tune-example` component.",
-              "required": false
+              "name": "text-span",
+              "description": ""
             }
-          ],
-          "members": [],
-          "events": [],
-          "slots": [],
-          "cssProperties": [],
-          "cssParts": []
+          ]
         }
       ]
     }

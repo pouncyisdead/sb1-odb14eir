@@ -1,0 +1,37 @@
+@use '../../styles/utils/variables' as *;
+@use '../../styles/utils/functions' as *;
+@use '../../styles/utils/mixins' as *;
+
+// <%= className %> Component Styles.
+:host {
+  --_host-contrast: var(--tune-default-contrast, #{$color-text});
+  --_host-bg: var(--tune-default-bg, #{$color-background});
+  --_host-disabled: var(--tune-disabled-contrast, #89a);
+  --_host-bg-disabled: var(--tune-disabled-bg, #eef);
+  --_host-gap: var(--tune-space--small, #{$spacing-xs});
+  --_host-border-radius: var(--tune-border-radius, #{$border-radius});
+
+  all: inherit; // Reset all properties
+  display: contents;
+  position: relative;
+
+  // padding: spacing(2);
+  color: var(--_host-contrast);
+  background-color: var(--_host-bg);
+
+  .btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--_host-gap);
+    border-radius: var(--_host-border-radius);
+    color: inherit;
+    background: inherit;
+  }
+}
+
+:host([disabled]) {
+  color: var(--_host-disabled);
+  background-color: var(--_host-bg-disabled);
+}

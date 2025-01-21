@@ -1,15 +1,16 @@
 import { newSpecPage, SpecPage } from '@stencil/core/testing';
-import { DsExample } from '../ds-example';
+import { DsButton } from '../ds-button';
 
-describe('DsExample', () => {
+// DsButton Unit Tests.
+describe('DsButton', () => {
   let page: SpecPage;
   const initialText = 'Hello World!';
   // Change this to match your template.
-  const initialContent = `<ds-example text="${initialText}"></ds-example>`;
+  const initialContent = `<ds-button text="${initialText}"></ds-button>`;
 
   beforeEach(async () => {
     page = await newSpecPage({
-      components: [DsExample],
+      components: [DsButton],
       html: initialContent,
     });
   });
@@ -19,25 +20,25 @@ describe('DsExample', () => {
     expect(root).toBeTruthy();
   });
 
-  it('ds-example renders correctly', () => {
+  it('ds-button renders correctly', () => {
     const { root } = page;
     expect(root).toEqualHtml(`
-      <ds-example text="${initialText}">
+      <ds-button text="${initialText}">
         <mock:shadow-root>
          <button class="text" role="button">
            <span>${initialText}</span>
            <slot></slot>
          </button>
         </mock:shadow-root>
-      </ds-example>
+      </ds-button>
     `);
   });
 
-  it('ds-example has shadowRoot text', () => {
+  it('ds-button has shadowRoot text', () => {
     const {
       doc: { body },
     } = page;
-    const shadowRoot = body.querySelector('ds-example')?.shadowRoot;
+    const shadowRoot = body.querySelector('ds-button')?.shadowRoot;
     expect(shadowRoot).not.toBeNull();
     const { textContent } = shadowRoot;
     expect(textContent).toBeTruthy();
